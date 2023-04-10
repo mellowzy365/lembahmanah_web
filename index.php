@@ -1,6 +1,6 @@
 <?php
 /**
- * @package    Joomla.Administrator
+ * @package    Joomla.Site
  *
  * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
@@ -38,14 +38,12 @@ if (!defined('_JDEFINES'))
 }
 
 require_once JPATH_BASE . '/includes/framework.php';
-require_once JPATH_BASE . '/includes/helper.php';
-require_once JPATH_BASE . '/includes/subtoolbar.php';
 
 // Set profiler start time and memory usage and mark afterLoad in the profiler.
 JDEBUG ? JProfiler::getInstance('Application')->setStart($startTime, $startMem)->mark('afterLoad') : null;
 
 // Instantiate the application.
-$app = JFactory::getApplication('administrator');
+$app = JFactory::getApplication('site');
 
 // Execute the application.
 $app->execute();
